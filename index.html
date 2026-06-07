@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="description"
+        content="Analyze Instagram followers, following and non-followers locally in your browser.">
+
+    <meta name="theme-color" content="#2563eb">
+
+    <link rel="icon" href="favicon.ico">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Instagram Relationship Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Instagram Relationship Analyzer</h1>
+
+        <div class="version">
+            V1.0
+        </div>
+    </header>
+
+    <div class="upload-card">
+
+        <div>
+            <input type="file" id="zipFile" accept=".zip">
+        </div>
+
+        <button id="loadBtn">
+            <span id="loadText">
+                Load Instagram ZIP
+            </span>
+            <span id="spinner" class="spinner hidden"></span>
+        </button>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-card followers-card">
+
+            <div class="stat-icon">
+                👥
+            </div>
+
+            <div>
+
+                <div id="followersCount" class="stat-number">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Followers
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card following-card">
+
+            <div class="stat-icon">
+                ✅
+            </div>
+
+            <div>
+
+                <div id="followingCount" class="stat-number">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Following
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card nonfollowers-card">
+
+            <div class="stat-icon">
+                ❌
+            </div>
+
+            <div>
+
+                <div id="nonFollowersCount" class="stat-number">
+                    0
+                </div>
+
+                <div class="stat-label">
+                    Non-Followers
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="search-card">
+
+        <input id="search" placeholder="Search username...">
+
+        <button class="clear-btn" id="clearBtn">
+            Clear
+        </button>
+
+    </div>
+
+    <button id="exportBtn" class="export-btn">
+        Export Non-Followers TXT
+    </button>
+
+    <div class="swipe-hint">
+        ← Swipe for more →
+    </div>
+
+    <div class="panels">
+        <div class="panel">
+
+            <div class="panel-header">
+                Followers
+            </div>
+
+            <ul id="followersList" class="panel-list">
+                <li class="empty-state">
+                    Load Instagram ZIP to begin
+                </li>
+            </ul>
+
+        </div>
+        <div class="panel">
+
+            <div class="panel-header">
+                Following
+            </div>
+
+            <ul id="followingList" class="panel-list">
+                <li class="empty-state">
+                    Load Instagram ZIP to begin
+                </li>
+            </ul>
+
+        </div>
+        <div class="panel">
+
+            <div class="panel-header">
+                Non-Followers
+            </div>
+
+            <ul id="nonFollowersList" class="panel-list">
+                <li class="empty-state">
+                    Load Instagram ZIP to begin
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close">&times;</span>
+            <div id="details"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+
+        Runs completely in your browser
+
+    </footer>
+
+    <script src="jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
